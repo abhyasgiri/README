@@ -112,10 +112,20 @@ In this stage, Docker-compose is installed and Dockerhub is connected to Jenkins
 
 
 ### Stage 3: Configure Swarm
-Jenkins runs the ansible playbook.yaml file. Ansible then initialises the swarm by setting up swarm-manager and swarm-worker nodes which are joined together using a join token. Ansible is also used to install docker dependencies in this stage. Ansible also installs the NGINX load balancer and starts it. If there is a change to the nginx.conf configuration file it reloads NGINX again.
+Jenkins runs the ansible playbook.yaml file. Ansible then initialises the swarm by setting up swarm-manager and swarm-worker nodes which are joined together using a join token. Ansible is also used to install docker dependencies in this stage. Ansible also installs the NGINX load balancer and starts it. If there is a change to the nginx.conf configuration file it reloads NGINX again. Ansible has been used instead of, for instance, bash scripts, because: 1) Ansible is much easier to use as it has many commands and modules readily available, and 2) it allows parallel execution across multiple machines, just to name a few. 
 
 ### Stage 4: Deploy
 Jenkins uses secure copy (SCP) to transfer the docker-compose.yaml file into the manager node. Jenkins SSH's into the manager node and runs docker stack deploy which pulls the images to the manager node and deploys them onto the worker nodes and their replicas. 
+
+
+## Project Tracking 
+
+<img width="960" alt="trello_" src="https://user-images.githubusercontent.com/74771160/105655622-4cc67500-5eb8-11eb-81e3-40e1f3e2f17a.PNG">
+
+The board has been used for project tracking by following the method of moving elements from the 'Planning' phase, across the 'In progress' phase, to the 'Done' phase. There is also a collation of ongoing issues listed. Each project element is labled as a specfic category of work, as well as being colour coded. A MOSCOW prioritisation system has been deployed to order the user stories in order of importance pertaining to the MVP specifications.
+
+## Risk Assessment
+
 
 
 
