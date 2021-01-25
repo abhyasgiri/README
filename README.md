@@ -117,7 +117,7 @@ Jenkins uses secure copy (SCP) to transfer the docker-compose.yaml file into the
 
 ## Project Tracking 
 
-Trello was used to track project progress. Here is the link to the trello board: https://trello.com/b/B40jk9aX/football
+Trello was used to track project progress:
 <img width="960" alt="trello_" src="https://user-images.githubusercontent.com/74771160/105655622-4cc67500-5eb8-11eb-81e3-40e1f3e2f17a.PNG">
 
 The board has been used for project tracking by following the method of moving elements from the 'Planning' phase, across the 'In progress' phase, to the 'Done' phase. There is also a collation of ongoing issues listed. Each project element is labled as a specfic category of work, as well as being colour coded. A MOSCOW prioritisation system has been deployed to order the user stories in order of importance pertaining to the MVP specifications.
@@ -150,7 +150,13 @@ Unit tests were written for each service. The test for service 1 uses an sqlite 
 
 ### JUnit and Cobertura Reports
 
-NEEDD TO DO
+<img width="487" alt="tests" src="https://user-images.githubusercontent.com/74771160/105664098-c582fc80-5ecb-11eb-9386-75a1226a60da.PNG">
+
+As shown by the graph, the 4 unit tests (one for each service) has passed in the latest build. The graph makes trends easier to spot. For instance, I can easily tell by the coral triangles on the x-axis that some previous tests have failed. This has been done to show the output of error caused due to switching branches between an old branch and the most updated one where tests run successfully. 
+
+<img width="764" alt="Capturecoverage" src="https://user-images.githubusercontent.com/74771160/105664244-172b8700-5ecc-11eb-928b-b7a8cefe8f88.PNG">
+
+The Cobertura reports show the code coverages. The line coverage metric indicates that 90% of the statements were executed in the unit tests. This is largely due to the lack of coverage in service 4 as shown above in the test report for service 4. Other issues lie within files and classes (both at 75% coverage). 
 
 ## Front-End Design
 
@@ -167,6 +173,7 @@ NEEDD TO DO
 - Use Nexus as the artefact repository instead of Dockerhub.  A Nexus repository manager is easy to install, manage, and integrate with your deployment pipeline. Dockerhub does the job, but it does not meet requirements for proprietary image distribution and storage, trust and provenance, or scalability - some potential future issues. 
 - Add update and delete functionalities into the application and relate it to each service to provide the user a complete user experience.
 - Add player images and stats to keep the user intrigued. 
+- Increase the line coverage for unit tests by covering the player_pack and player_name lines within all if statements or by shortening the lines of code in service 4.
 
 ## Authors
 
