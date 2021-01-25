@@ -120,6 +120,7 @@ Jenkins uses secure copy (SCP) to transfer the docker-compose.yaml file into the
 
 ## Project Tracking 
 
+Trello was used to track project progress. Here is the link to the trello board: https://trello.com/b/B40jk9aX/football
 <img width="960" alt="trello_" src="https://user-images.githubusercontent.com/74771160/105655622-4cc67500-5eb8-11eb-81e3-40e1f3e2f17a.PNG">
 
 The board has been used for project tracking by following the method of moving elements from the 'Planning' phase, across the 'In progress' phase, to the 'Done' phase. There is also a collation of ongoing issues listed. Each project element is labled as a specfic category of work, as well as being colour coded. A MOSCOW prioritisation system has been deployed to order the user stories in order of importance pertaining to the MVP specifications.
