@@ -133,6 +133,10 @@ Below is a risk assessment of some risks anticipated thusfar. The matrix provide
 
 ## Testing 
 
+Unit tests were written for each service. The test for service 1 uses an sqlite database instead of the persisted sql database to mitigate possible issues. All unit tests use assert functions to assert that the service returns an expected response. Mock testing has been used to replace parts of functions such as the random function with mock objects to force a specific output. These tests have been automated by Jenkins which is triggered upon making a commit to the configured Github repository via a webhook. The results of the tests can be viewed on the build page by accessing 'Test Results' on the sidemenu. 
+
+### Service 1:
+
 
 
 
