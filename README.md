@@ -80,6 +80,10 @@ Player Card Generator:
 
 As illustrated, service 1 sends GET requests to service 2 and service 3. These responses are then sent to service 4 as a POST request, which then sends a response back to the front-end. The front-end then persists the data into a MySQL managed database by inserting a new entry. A managed database was chosen as it can be a cost-effective method of running a 24-hour service with proactive monitoring at all times. Service 1 uses jinja 2 templating. 
 
+<img width="490" alt="CaptureVMS" src="https://user-images.githubusercontent.com/74771160/105651922-108f1680-5eb0-11eb-9499-16b4013e742f.PNG">
+
+Above is an image taken from the GCP console for the VM instances used in this project. Jenkins-ansible configuration were carried out from the 'football-build-server' VM; nginx load balancer was set-up in a seperate 'nginx-vm'; 'football-project-vm1' has been used to write the code and much of the configurations; 'swarm-manager' and 'swarm-worker1' are the VM's for the manager and worker nodes, respectively. 
+
 ## Database Structure (ED diagram)
 
 ![database struc](https://user-images.githubusercontent.com/74771160/105645843-34446380-5e94-11eb-9304-ea6d2fa70ab4.png)
@@ -114,9 +118,6 @@ Jenkins runs the ansible playbook.yaml file. Ansible then initialises the swarm 
 Jenkins uses secure copy (SCP) to transfer the docker-compose.yaml file into the manager node. Jenkins SSH's into the manager node and runs docker stack deploy which pulls the images to the manager node and deploys them onto the worker nodes and their replicas. 
 
 
-<img width="490" alt="CaptureVMS" src="https://user-images.githubusercontent.com/74771160/105651922-108f1680-5eb0-11eb-9499-16b4013e742f.PNG">
-
-Above is an image taken from the GCP console for the VM instances used in this project. Jenkins-ansible configuration were carried out from the 'football-build-server' VM; nginx load balancer was set-up in a seperate 'nginx-vm'; 'football-project-vm1' has been used to write the code and much of the configurations; 'swarm-manager' and 'swarm-worker1' are the VM's for the manager and worker nodes, respectively. 
 
 
 
