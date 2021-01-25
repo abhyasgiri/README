@@ -16,10 +16,7 @@
 - Risk Assessment
 - Testing
 - Front-End Design
-- Known Issues
 - Future Improvements
-- Appendix
-  - Versioning
   
 ## Brief 
 This project is designed to showcase the application of knowledge I've learnt from the first half of my DevOps training at QA. This piece of work largely focuses on the CI/CD pipeline, with a less pronounced focus on the actual coding of the applicaiton itself. 
@@ -137,10 +134,44 @@ Unit tests were written for each service. The test for service 1 uses an sqlite 
 
 ### Service 1:
 
+<img width="538" alt="service1 test" src="https://user-images.githubusercontent.com/74771160/105661440-50142d80-5ec5-11eb-9b88-f7b78ab87c9b.PNG">
 
+### Service 2:
 
+<img width="537" alt="service2 tes" src="https://user-images.githubusercontent.com/74771160/105661473-5efae000-5ec5-11eb-9d0b-2a88f2704c11.PNG">
 
+### Service 3:
 
+<img width="585" alt="service3 test" src="https://user-images.githubusercontent.com/74771160/105661580-a6816c00-5ec5-11eb-9e75-4c472cfbaff4.PNG">
 
+### Service 4:
 
-something about posting reports , etc. and explaining them ?
+<img width="746" alt="service4test" src="https://user-images.githubusercontent.com/74771160/105661588-b305c480-5ec5-11eb-92f1-0c79988a3529.PNG">
+
+### JUnit and Cobertura Reports
+
+NEEDD TO DO
+
+## Front-End Design
+
+### Implementation 1:
+
+<img width="669" alt="imp 1" src="https://user-images.githubusercontent.com/74771160/105663161-73d97280-5ec9-11eb-9826-871aeb256950.PNG">
+
+### Implementation 2:
+
+<img width="363" alt="imp2" src="https://user-images.githubusercontent.com/74771160/105662574-f5300580-5ec7-11eb-84cb-bda1999b8b9f.PNG">
+
+## Future Improvements
+
+- Use Nexus as the artefact repository instead of Dockerhub.  A Nexus repository manager is easy to install, manage, and integrate with your deployment pipeline. Dockerhub does the job, but it does not meet requirements for proprietary image distribution and storage, trust and provenance, or scalability - some potential future issues. 
+- Add update and delete functionalities into the application and relate it to each service to provide the user a complete user experience.
+- Add player images and stats to keep the user intrigued. 
+
+## Authors
+
+Abhyas Giri
+
+## Contributors
+
+Harry Volker
