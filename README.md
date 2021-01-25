@@ -127,6 +127,11 @@ The board has been used for project tracking by following the method of moving e
 
 ## Risk Assessment
 
+Below is a risk assessment of some risks anticipated thusfar. The matrix provides an overview of response strategies and control measures implemented or proposed. An assessment of the likelyhood and the impact of each risk was carried out at the early stages of the project and at the end of the project. By implementing some control measures, it can be seen that certain risks have been mitigated. 
+
+<img width="532" alt="Capturematrix" src="https://user-images.githubusercontent.com/74771160/105659564-e72ab680-5ec0-11eb-9d5b-c566073e240d.PNG">
+
+## Testing 
 
 
 
