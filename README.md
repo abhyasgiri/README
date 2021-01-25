@@ -100,9 +100,18 @@ The use of an integerated pipeline has allowed for rapid and simple development-
 Testing has been made part of the CI pipeline so that tests are automated for each build. Unit tests and mock tests have written up for each service, and upon successful testing, coverage reports are published which can be viewed in the console logs. Cobertura has been used as plugin on jenkins as it calculates the percentage of code assessed by tests. JUnit is another useful plugin deployed in this project as consumes XML test reports generated during the builds and provides clear graphical visualization of previous test results, as well as functioning as a web UI for viewing test reports and tracking failures which makes debugging easier.
 
 ### Stage 2: Build & Push Images
-Service containers are built from their images using Docker-compose. They are then pushed onto Dockerhub as artefacts ready for the next stage. Credentials have been used in Jenkins to save the login credentials for dockerhub as environment variables. 
+In this stage, Docker-compose is installed and Dockerhub is connected to Jenkins using Jenkins' credentials system. Service images are built using Docker-compose, but as a parallel build meaning the images are built concurrently which can be a time-saver in the future if there are numerous builds. They are then pushed onto Dockerhub as artefacts ready for the next stage. Credentials have been used to save the login credentials for dockerhub as environment variables, allowing Jenkins to connect to the specified Dockerhub account where the artefacts are to be pushed. Environment variables have been used because: 1) once they are set, further configuration is not required even if certain variables change, and 2) they offer a more secure way of storing sensitive information. 
 
+### Stage 3: Configure Swarm
+Jenkins runs the ansible playbook.yaml file. Ansible then initialises the swarm by setting up swarm-manager and swarm-worker nodes which are joined together using a join token. Ansible is also used to install docker dependencies in this stage. Ansible also installs the NGINX load balancer and starts it. If there is a change to the nginx.conf configuration file it reloads NGINX again.
 
+### Stage 4: Deploy
+Jenkins uses secure copy (SCP) to transfer the docker-compose.yaml file into the manager node. Jenkins SSH's into the manager node and runs docker stack deploy which pulls the images to the manager node and deploys them onto the worker nodes and their replicas. 
+
+![image](https://user-images.githubusercontent.com/74771160/105651782-ad9d7f80-5eaf-11eb-9f32-06c841f6bff6.png)
+
+before ending CI pipeline section: 
+- mention how things are put in separate VM's
 image of the build logs. look at hitesh's stage view 
 
 
